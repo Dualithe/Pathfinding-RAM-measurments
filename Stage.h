@@ -1,4 +1,5 @@
 #include <vector>
+
 class Stage
 {
     public:
@@ -11,8 +12,8 @@ class Stage
 
 
     private:
-        int size;
-        void generate();
-        std::vector<int> *obstacles;
+        int size; 
+        int generate(size);
+        //std::vector<int> *obstacles;
 
 };
