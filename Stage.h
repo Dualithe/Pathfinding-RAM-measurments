@@ -5,15 +5,23 @@ class Stage
     public:
 
         // constructor and destructor
-        Stage(std::vector<int> *obstacles, int size);
+        Stage(int size);
         ~Stage();
 
-        std::vector<int> getObstacles();
+        int** getBoard();
+        void displayBoard();
 
 
     private:
+<<<<<<< HEAD
         int size; 
         int generate(size);
         //std::vector<int> *obstacles;
+=======
+        int size;
+
+        int** board;
+        int** generateBoard();
+>>>>>>> 29e8605 (Generate board)
 
 };
