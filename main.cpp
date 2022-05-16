@@ -1,21 +1,10 @@
 #include "Stage.h"
-<<<<<<< HEAD
-#include "AStar.h"
-#include "Dijkstra.h"
+#include <stdio.h>
+
 
 int main()
 {
-
-    Stage.generate(50);
-    return 0;
-=======
-
-int main()
-{
-    Stage* stage = new Stage(100);
-
+    Stage* stage = new Stage(10);
 
     stage->displayBoard();
-
->>>>>>> 29e8605 (Generate board)
 }

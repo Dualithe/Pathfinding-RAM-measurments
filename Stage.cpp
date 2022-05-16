@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-#include "Stage.h"
-
-int Stage::generate(int size)
-{
-	int result[][];
-	for (int i = 0; i < size; i++)
-	{
-		for (int j = 0; j < size; j++)
-=======
 #include <iostream>
 #include <ctime>
 #include "Stage.h"
+
 
 
 Stage::Stage(int size)
@@ -18,6 +9,12 @@ Stage::Stage(int size)
     this->size = size;
     this->board = generateBoard();
 }
+
+Stage::Stage(int** board)
+{
+	this->board = board;
+}
+
 Stage::~Stage()
 {
     for(int i = 0; i <size; i++)
@@ -38,46 +35,24 @@ int** Stage::generateBoard()
 	{
         result[i] = new int[Stage::size];
 		for (int j = 0; j < Stage::size; j++)
->>>>>>> 29e8605 (Generate board)
 		{
 			result[i][j] = 0;
 		}
 	}
 
-<<<<<<< HEAD
-	int r1, r2;
-	for (int k = 0; k < 10; k++) 
-	{
-		r1 = rand() % 49;
-		r2 = rand() % 49;
-		if (result[r1][r2] != 1) {
-=======
     srand(time(NULL));
 
 	int r1, r2;
-	for (int k = 0; k < Stage::size ; k++) 
+	for (int k = 0; k < Stage::size*10 ; k++) 
 	{
 		r1 = rand() % Stage::size + 1;
 		r2 = rand() % Stage::size + 1;
 		if (result[r1][r2] != 1) 
         {
->>>>>>> 29e8605 (Generate board)
 			result[r1][r2] = 1;
 		}
 	}
 
-<<<<<<< HEAD
-	for (int i = 0; i < size; i++)
-	{
-		for (int j = 0; j < size; j++)
-		{
-			cout << result[i][j];
-		}
-	}
-
-	return result;
-}
-=======
 	return result;
 } 
 
@@ -94,4 +69,7 @@ void Stage::displayBoard()
 	}
 }
 
->>>>>>> 29e8605 (Generate board)
+void Stage::setBoard(int** value)
+{
+	this->board = value;
+}

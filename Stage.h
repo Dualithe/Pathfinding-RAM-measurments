@@ -8,20 +8,17 @@ class Stage
         Stage(int size);
         ~Stage();
 
+        Stage(int** board);
+
         int** getBoard();
         void displayBoard();
-
+        void setBoard(int** value);
 
     private:
-<<<<<<< HEAD
-        int size; 
-        int generate(size);
-        //std::vector<int> *obstacles;
-=======
         int size;
 
         int** board;
         int** generateBoard();
->>>>>>> 29e8605 (Generate board)
 
 };
+
