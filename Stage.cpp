@@ -43,10 +43,10 @@ int** Stage::generateBoard()
     srand(time(NULL));
 
 	int r1, r2;
-	for (int k = 0; k < Stage::size*10 ; k++) 
+	for (int k = 0; k < Stage::size*2 ; k++) 
 	{
-		r1 = rand() % Stage::size + 1;
-		r2 = rand() % Stage::size + 1;
+		r1 = rand() % Stage::size;
+		r2 = rand() % Stage::size;
 		if (result[r1][r2] != 1) 
         {
 			result[r1][r2] = 1;
@@ -72,4 +72,9 @@ void Stage::displayBoard()
 void Stage::setBoard(int** value)
 {
 	this->board = value;
+}
+
+int** Stage::getBoard() 
+{
+	return this->board;
 }
