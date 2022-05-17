@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include "Stage.h"
+#include "AStar.h"
 
 
 
@@ -74,7 +75,31 @@ void Stage::setBoard(int** value)
 	this->board = value;
 }
 
+
 int** Stage::getBoard() 
 {
 	return this->board;
 }
+
+int Stage::getSize()
+{
+	return this->size;
+}
+
+void Stage::displayPath() {
+
+	//AStar myAStar(board, size);
+	for (int i = 0; i < Stage::size; i++)
+	{
+		for (int j = 0; j < Stage::size; j++)
+		{
+			//if () {
+				std::cout << Stage::board[i][j] << " ";
+			//}
+		}
+		std::cout << std::endl;
+	}
+
+
+}
+	
