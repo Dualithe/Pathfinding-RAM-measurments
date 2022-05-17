@@ -2,7 +2,7 @@
 #include <ctime>
 #include "Stage.h"
 
-
+#define OBST 4
 
 Stage::Stage(int size)
 {
@@ -23,7 +23,15 @@ Stage::~Stage()
     }
 }
 
+int** Stage::getBoard()
+{
+	return board;
+}
 
+int Stage::getSize()
+{
+	return size;
+}
 
 int** Stage::generateBoard()
 {
@@ -40,19 +48,18 @@ int** Stage::generateBoard()
 		}
 	}
 
+
     srand(time(NULL));
 
 	int r1, r2;
-	for (int k = 0; k < Stage::size*10 ; k++) 
+	for (int k = 0; k < Stage::size*OBST; k++) 
 	{
-		r1 = rand() % Stage::size + 1;
-		r2 = rand() % Stage::size + 1;
-		if (result[r1][r2] != 1) 
-        {
-			result[r1][r2] = 1;
-		}
+		r1 = rand() % Stage::size;
+		r2 = rand() % Stage::size;
+		result[r1][r2] = 1;
 	}
-
+	result[0][0] = 0;
+	result[size-1][size-1] = 0;
 	return result;
 } 
 
@@ -67,9 +74,4 @@ void Stage::displayBoard()
 		}
         std::cout << std::endl;
 	}
-}
-
-void Stage::setBoard(int** value)
-{
-	this->board = value;
 }

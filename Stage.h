@@ -10,6 +10,8 @@ class Stage
 
         Stage(int** board);
 
+        int getSize();
+
         int** getBoard();
         void displayBoard();
         void setBoard(int** value);
