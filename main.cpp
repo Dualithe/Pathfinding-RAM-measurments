@@ -1,55 +1,39 @@
-#include "BFS.h"
 #include "Stage.h"
+#include "AStar.h"
+#include <stdio.h>
 #include <iostream>
-#include <sys/resource.h>
 
-long get_mem_usage()
-{
-    struct rusage r_usage;
-    getrusage(RUSAGE_SELF, &r_usage);
-    return r_usage.ru_maxrss;
-}
 
 int main()
 {
-    // wybor algorytmu
-    std::cout << "Wybierz algorytm: \n";
-    std::cout << "1. BFS\n";
-    std::cout << "...\n";
-    int a;
-    std::cin >> a; 
 
-    // wybor rozmiaru planszy
-    std::cout << "Podaj rozmiar planszy: ";
-    int s;
-    std::cin >> s;
+	Stage* stage = new Stage(10);
 
-    if (s<1) return -1;
+	stage->displayBoard();
+	std::cout << std::endl;
 
-    // generowanie planszy
-    Stage* stage = new Stage(s);
+	stage->saveCurrentMap();
+	std::cout << std::endl;
 
-    // pobranie ilosci uzytych zasobow przez tworzenie planszy
-    long stage_memory = get_mem_usage();
+	AStar astar(stage->getBoard(), stage->getSize());
 
+	AStar::Vec2 start(0, 0);
+	AStar::Vec2 end(9, 9);
 
-    switch (a)
-    {
-    case 1:
-        {
-            BFS* bfs = new BFS(stage->getBoard(), stage->getSize());    
-            std::cout << bfs->getPath();
-            long current_mem = get_mem_usage();
-            std::cout << "\n\nPotrzebna ilość pamięci RAM dla algorytmu wyszukiwania wszerz: " << current_mem - stage_memory <<"kB\n\n";
-        }
-        break;
-
-    default:
-        break;
-    }
-
-
-
-
-    return 0;
+	std::cout << std::endl;
+	std::vector<AStar::Node*> path = astar.calculatePath(start, end);
+	for (int i = 0; i < path.size(); i++)
+	{
+		int x = path[i]->pos.x;
+		int y = path[i]->pos.y;
+		std::cout << x << ',' << y << '\n';
+	}
+	std::cout << std::endl;
+	Stage* stage2 = new Stage(30);
+	stage2->displayBoard();
+	std::cout << std::endl;
+	stage2->loadMap(1);
+	std::cout << std::endl;
+	std::cout << std::endl;
+	stage2->displayBoard();
 }
