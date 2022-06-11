@@ -1,2 +1,5 @@
-﻿  main.cpp
+﻿  Stage.cpp
+C:\Users\Dualithe\source\repos\AKPROJEKT\Stage.cpp(47,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  main.cpp
+  Generating Code...
   AKPROJEKT.vcxproj -> C:\Users\Dualithe\source\repos\AKPROJEKT\x64\Debug\AKPROJEKT.exe
