@@ -1,16 +1,6 @@
-#include "BFS.h"
 #include "Stage.h"
-#include <iostream>
-#include <sys/resource.h>
 #include "AStar.h"
-
-long get_mem_usage()
-{
-    struct rusage r_usage;
-    getrusage(RUSAGE_SELF, &r_usage);
-    return r_usage.ru_maxrss;
-}
-
+#include <stdio.h>
 int main()
 {
     // wybor algorytmu
@@ -70,8 +60,4 @@ int main()
         break;
     }
 
-
-
-
-    return 0;
 }

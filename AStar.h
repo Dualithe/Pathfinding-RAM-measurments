@@ -3,6 +3,7 @@
 #include <ctime>
 #include <vector>
 #include <algorithm>
+#include <chrono>
 
 
 
@@ -76,6 +77,17 @@ public:
 		Vec2 right = Vec2(pos.x + 1, pos.y);
 		if (isPosValid(right)) result.push_back(right);
 
+		Vec2 topright = Vec2(pos.x + 1, pos.y + 1);
+		if (isPosValid(topright)) result.push_back(topright);
+
+		Vec2 bottomright = Vec2(pos.x + 1, pos.y - 1);
+		if (isPosValid(bottomright)) result.push_back(bottomright);
+
+		Vec2 topleft = Vec2(pos.x - 1, pos.y + 1);
+		if (isPosValid(topleft)) result.push_back(topleft);
+
+		Vec2 bottomleft = Vec2(pos.x - 1, pos.y - 1);
+		if (isPosValid(bottomleft)) result.push_back(bottomleft);
 
 		return result;
 	}
@@ -114,6 +126,7 @@ public:
 
 	void calculate(Vec2 startPos, Vec2 endPos)
 	{
+		auto start = std::chrono::steady_clock::now();
 		endNode = NULL;
 		openList.clear();
 		closedList.clear();
@@ -140,6 +153,10 @@ public:
 				tryAddToOpen(pos, g, h, currentNode);
 			}
 		}
+		auto end = std::chrono::steady_clock::now();
+		std::chrono::duration<double> elapsed_seconds = end - start;
+		std::cout << "Calculating shortest path with A* took " << elapsed_seconds.count() << " sconds ";
+		std::cout << std::endl;
 	}
 
 	std::vector<Node*> getPath()

@@ -1,4 +1,5 @@
 #include <vector>
+#include <string>
 
 class Stage
 {
@@ -10,11 +11,14 @@ class Stage
 
         Stage(int** board);
 
-        int getSize();
-
         int** getBoard();
+        int getSize();
         void displayBoard();
         void setBoard(int** value);
+        void displayPath();
+        void saveCurrentMap();
+        void loadMap(int mapNum);
+        bool fileExists(std::string filename);
 
     private:
         int size;
