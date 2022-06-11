@@ -7,7 +7,8 @@ struct Point
 struct Node
 {
     Point pt;  
-    int dist;  
+    int dist; 
+    Node * prev; 
 };
 
 class BFS
