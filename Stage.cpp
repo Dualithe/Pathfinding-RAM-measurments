@@ -55,6 +55,7 @@ int** Stage::generateBoard()
 
 	int r1, r2;
 	for (int k = 0; k < (int)Stage::size*Stage::size * 0.4; k++) 
+
 	{
 		r1 = rand() % Stage::size;
 		r2 = rand() % Stage::size;
@@ -97,10 +98,12 @@ int Stage::getSize()
 }
 
 void Stage::displayPath() {
+
 	for (int i = 0; i < Stage::size; i++)
 	{
 		for (int j = 0; j < Stage::size; j++)
 		{
+
 				std::cout << Stage::board[i][j] << " ";
 		}
 		std::cout << std::endl;

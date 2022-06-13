@@ -1,10 +1,12 @@
 #include "Stage.h"
 #include "AStar.h"
+
 #include <iostream>
 #include <sys/resource.h>
 #include "BFS.h"
 #include <fstream>
-#include <stdio.h>
+
+
 
 long get_mem_usage()
 {
@@ -259,3 +261,4 @@ int main()
     }
 
 }
+
