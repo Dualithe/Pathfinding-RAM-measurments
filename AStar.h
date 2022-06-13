@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <ctime>
 #include <vector>
@@ -37,7 +36,6 @@ public:
         Node* parent = NULL;
     };
 
-public:
 
 
     AStar(int** board, int size);
@@ -48,4 +46,13 @@ public:
     void calculate(Vec2 startPos, Vec2 endPos);
     std::vector<Node*> getPath();
     Node* popBestNode();
+
+private:
+    int size;
+    int** board;
+
+    std::vector<Node*> closedList;
+    std::vector<Node*> openList;
+    Node* endNode = NULL;
+
 };

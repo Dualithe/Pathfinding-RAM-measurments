@@ -20,13 +20,13 @@ class Stage
         void saveCurrentMap();
         void loadMap(int mapNum);
         bool fileExists(std::string filename);
+        int** generateBoard();
 
 
     private:
         int size;
 
         int** board;
-        int** generateBoard();
 
 };
 

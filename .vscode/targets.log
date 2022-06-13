@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Mon Jun 13 20:05:38 2022
+# Make data base, printed on Mon Jun 13 22:21:43 2022
 
 # Variables
 
@@ -53,7 +54,7 @@ PATH = /home/kuba/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/bi
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-e1d8240c-e33d-4aeb-9355-e2fa74c745d3.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-3aed784f-31d4-4e39-a667-dcecae3c641b.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -144,10 +145,8 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
-# environment
-MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=68/1024=7%, Rehash=0, Collisions=4/96=4%
+# Load=67/1024=7%, Rehash=0, Collisions=4/95=4%
 
 # Pattern-specific Variable Values
 
@@ -155,9 +154,9 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 46, inode 19984723346562270): 18 files, no impossibilities.
+# . (device 46, inode 75998243711913276): 16 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -191,7 +190,7 @@ all:
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
 #  recipe to execute (from 'Makefile', line 2):
-	g++ main.cpp BFS.cpp Stage.cpp AStar.h -o main.o
+	g++ main.cpp BFS.cpp Stage.cpp AStar.cpp -o main.o
 
 # Not a target:
 .SUFFIXES:
@@ -202,7 +201,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-11 13:57:52.8869032
+#  Last modified 2022-06-13 22:21:34.2564097
 #  File has been updated.
 #  Successfully updated.
 
@@ -220,12 +219,12 @@ Makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 23 / storage = 189 B / avg = 8 B
-# current buf: size = 8162 B / used = 189 B / count = 23 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 21 / storage = 178 B / avg = 8 B
+# current buf: size = 8162 B / used = 178 B / count = 21 / avg = 8 B
 
-# strcache performance: lookups = 30 / hit rate = 23%
+# strcache performance: lookups = 28 / hit rate = 25%
 # hash-table stats:
-# Load=23/8192=0%, Rehash=0, Collisions=1/30=3%
-# Finished Make data base on Mon Jun 13 20:05:38 2022
+# Load=21/8192=0%, Rehash=0, Collisions=1/28=4%
+# Finished Make data base on Mon Jun 13 22:21:43 2022
 
  

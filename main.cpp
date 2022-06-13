@@ -5,7 +5,7 @@
 #include <sys/resource.h>
 #include "BFS.h"
 #include <fstream>
-
+#include <unistd.h>
 
 
 long get_mem_usage()
@@ -17,6 +17,7 @@ long get_mem_usage()
 
 int main()
 {
+
     // wybor algorytmu
     std::cout << "Wybierz algorytm: \n";
     std::cout << "1. BFS\n";
@@ -229,7 +230,6 @@ int main()
                 std::cout << "Map generated\n";
                 i++;
             }
-            delete stage;
         }
 
         for (int i = 0; i < 40; i++)

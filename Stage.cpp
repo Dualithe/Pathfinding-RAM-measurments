@@ -51,12 +51,12 @@ int** Stage::generateBoard()
 		}
 	}
 
-    srand(time(NULL));
+	srand(time(NULL));
 
 	int r1, r2;
 	for (int k = 0; k < (int)Stage::size*Stage::size * 0.4; k++) 
-
 	{
+
 		r1 = rand() % Stage::size;
 		r2 = rand() % Stage::size;
 		if (result[r1][r2] != 1) 
@@ -64,6 +64,9 @@ int** Stage::generateBoard()
 			result[r1][r2] = 1;
 		}
 	}
+
+	result[0][0] = 0;
+	result[size-1][size-1] = 0;
 
 	return result;
 } 
