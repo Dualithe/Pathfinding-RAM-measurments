@@ -8,6 +8,7 @@ BFS::BFS(int** board, int size)
     path = findPath(board, size);
 }
 
+
 int BFS::getPath()
 {
     return path;
@@ -53,6 +54,11 @@ int BFS::findPath(int** board, int size)
 
         if (pt.x == dest.x && pt.y == dest.y)
         {
+            for(int i = 0; i < size; i++) 
+            {
+                delete[] visited[i] ;
+            }
+            delete[] visited;
             return curr.dist;
         }
 
@@ -74,6 +80,10 @@ int BFS::findPath(int** board, int size)
             }
         }
     }
-
+    for(int i = 0; i < size; i++) 
+    {
+        delete[] visited[i] ;
+    }
+    delete[] visited;
     return -1;
 }

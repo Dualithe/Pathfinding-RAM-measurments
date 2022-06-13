@@ -8,7 +8,7 @@ class Stage
         // constructor and destructor
         Stage(int size);
         ~Stage();
-
+        Stage();
         Stage(int** board);
 
         int** getBoard();

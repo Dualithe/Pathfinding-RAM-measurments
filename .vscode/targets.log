@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jun 11 15:15:17 2022
+# Make data base, printed on Mon Jun 13 20:05:38 2022
 
 # Variables
 
@@ -15,7 +15,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
 # environment
@@ -31,7 +31,7 @@ CURDIR := /mnt/c/Users/Kuba/Desktop/projects/ak2-projekt/Pathfinding-RAM-measurm
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"pl","availableLanguages":{"*":"pl"},"_languagePackId":"c8befbfa7cd5d8527d842a3af66dca21.pl","_translationsConfigFile":"/home/kuba/.vscode-server/data/clp/c8befbfa7cd5d8527d842a3af66dca21.pl/tcf.json","_cacheRoot":"/home/kuba/.vscode-server/data/clp/c8befbfa7cd5d8527d842a3af66dca21.pl","_resolvedLanguagePackCoreLocation":"/home/kuba/.vscode-server/data/clp/c8befbfa7cd5d8527d842a3af66dca21.pl/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/home/kuba/.vscode-server/data/clp/c8befbfa7cd5d8527d842a3af66dca21.pl/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"pl","availableLanguages":{"*":"pl"},"_languagePackId":"9aeeae26507b7d8a3b91a91ec76323f8.pl","_translationsConfigFile":"/home/kuba/.vscode-server/data/clp/9aeeae26507b7d8a3b91a91ec76323f8.pl/tcf.json","_cacheRoot":"/home/kuba/.vscode-server/data/clp/9aeeae26507b7d8a3b91a91ec76323f8.pl","_resolvedLanguagePackCoreLocation":"/home/kuba/.vscode-server/data/clp/9aeeae26507b7d8a3b91a91ec76323f8.pl/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/home/kuba/.vscode-server/data/clp/9aeeae26507b7d8a3b91a91ec76323f8.pl/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /home/kuba/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/node
 # makefile (from 'Makefile', line 1)
@@ -53,9 +53,7 @@ PATH = /home/kuba/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/bi
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-92ce6ab3-5689-4825-8389-6b240b2ad00d.sock
-# environment
-VSCODE_SERVER_TAR = /mnt/c/Users/Kuba/AppData/Local/Temp/vscode-remote-wsl/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/vscode-server-stable-linux-x64.tar.gz
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-e1d8240c-e33d-4aeb-9355-e2fa74c745d3.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -69,7 +67,7 @@ PWD = /mnt/c/Users/Kuba/Desktop/projects/ak2-projekt/Pathfinding-RAM-measurments
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/2436_interop
+WSL_INTEROP = /run/WSL/12_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -146,6 +144,8 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
 # Load=68/1024=7%, Rehash=0, Collisions=4/96=4%
 
@@ -220,12 +220,12 @@ Makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 23 / storage = 192 B / avg = 8 B
-# current buf: size = 8162 B / used = 192 B / count = 23 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 23 / storage = 189 B / avg = 8 B
+# current buf: size = 8162 B / used = 189 B / count = 23 / avg = 8 B
 
 # strcache performance: lookups = 30 / hit rate = 23%
 # hash-table stats:
 # Load=23/8192=0%, Rehash=0, Collisions=1/30=3%
-# Finished Make data base on Sat Jun 11 15:15:17 2022
+# Finished Make data base on Mon Jun 13 20:05:38 2022
 
  

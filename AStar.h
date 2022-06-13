@@ -121,12 +121,12 @@ public:
 	std::vector<Node*> calculatePath(Vec2 startPos, Vec2 endPos)
 	{
 		calculate(startPos, endPos);
-		return getPath();
+		std::vector<Node*> path;
+		return path;
 	}
 
 	void calculate(Vec2 startPos, Vec2 endPos)
 	{
-		auto start = std::chrono::steady_clock::now();
 		endNode = NULL;
 		openList.clear();
 		closedList.clear();
@@ -153,10 +153,6 @@ public:
 				tryAddToOpen(pos, g, h, currentNode);
 			}
 		}
-		auto end = std::chrono::steady_clock::now();
-		std::chrono::duration<double> elapsed_seconds = end - start;
-		std::cout << "Calculating shortest path with A* took " << elapsed_seconds.count() << " sconds ";
-		std::cout << std::endl;
 	}
 
 	std::vector<Node*> getPath()
