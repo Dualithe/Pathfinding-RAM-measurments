@@ -36,20 +36,11 @@ public:
 		int h = 0;
 		int f = 0; //g+h
 		Node* parent = NULL;
-
-		bool operator<(const Node rhs) const
-		{
-			return h < rhs.h;
-		}
 	};
 
 private:
 	int size;
 	int** board;
-
-	std::priority_queue<Node*> openQueue;
-	std::priority_queue<Node*> closedQueue;
-
 
 	std::vector<Node*> closedList;
 	std::vector<Node*> openList;
@@ -128,47 +119,6 @@ public:
 		openList.push_back(newNode);
 	}
 
-	void tryAddToOpen2(Vec2 pos, int g, int h, Node* parent)
-	{
-		std::priority_queue<Node*> miscQueue;
-		while (!openQueue.empty()) {
-			Node* node = openQueue.top();
-			if (node->pos.x == pos.x && node->pos.y == pos.y)
-			{
-				return;
-			}
-			miscQueue.push(node);
-		}
-		while (!miscQueue.empty()) {
-			Node* node = miscQueue.top();
-			miscQueue.pop();
-			openQueue.push(node);
-		}
-
-		while (!closedQueue.empty()) {
-			Node* node = openQueue.top();
-			if (node->pos.x == pos.x && node->pos.y == pos.y)
-			{
-				return;
-			}
-			miscQueue.push(node);
-		}
-		while (!miscQueue.empty()) {
-			Node* node = miscQueue.top();
-			miscQueue.pop();
-			closedQueue.push(node);
-		}
-
-
-		Node* newNode = new Node;
-		newNode->g = g;
-		newNode->h = h;
-		newNode->f = g + h;
-		newNode->pos = pos;
-		newNode->parent = parent;
-		openQueue.push(newNode);
-	}
-
 	std::vector<Node*> calculatePath(Vec2 startPos, Vec2 endPos)
 	{
 		calculate(startPos, endPos);
@@ -190,9 +140,10 @@ public:
 
 		int h = std::abs(startPos.x - endPos.x) + std::abs(startPos.y - endPos.y);
 		tryAddToOpen(startPos, 0, h, NULL);
-		//-----------------------------------------------------------------------
-		while (!openQueue.empty()) {
-			Node* currentNode = popBestNode2();
+
+		while (openList.size() > 0)
+		{
+			Node* currentNode = popBestNode();
 
 			if (currentNode->pos.x == endPos.x && currentNode->pos.y == endPos.y)
 			{
@@ -206,31 +157,9 @@ public:
 			{
 				int g = currentNode->g + 10;
 				int h = std::abs(pos.x - endPos.x) + std::abs(pos.y - endPos.y);
-				tryAddToOpen2(pos, g, h, currentNode);
+				tryAddToOpen(pos, g, h, currentNode);
 			}
 		}
-		//-----------------------------------------------------------------------
-
-
-		//while (openList.size() > 0)
-		//{
-		//	Node* currentNode = popBestNode();
-
-		//	if (currentNode->pos.x == endPos.x && currentNode->pos.y == endPos.y)
-		//	{
-		//		endNode = currentNode;
-		//		break;
-		//	}
-
-		//	std::vector<Vec2> poses = getAdjacentPos(currentNode->pos);
-
-		//	for (Vec2 pos : poses)  //foreach
-		//	{
-		//		int g = currentNode->g + 10;
-		//		int h = std::abs(pos.x - endPos.x) + std::abs(pos.y - endPos.y);
-		//		tryAddToOpen(pos, g, h, currentNode);
-		//	}
-		//}
 	}
 
 	std::vector<Node*> getPath()
@@ -282,11 +211,4 @@ public:
 		closedList.push_back(bestNode);
 		return bestNode;
 	}
-
-	Node* popBestNode2() {
-		Node* bestNode = openQueue.top();
-		openQueue.pop();
-		return bestNode;
-	}
-
 };
