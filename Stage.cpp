@@ -35,7 +35,6 @@ Stage::~Stage()
 }
 
 
-
 int** Stage::generateBoard()
 {
 	int** result;
@@ -51,7 +50,7 @@ int** Stage::generateBoard()
 		}
 	}
 
-	srand(time(NULL));
+
 
 	int r1, r2;
 	for (int k = 0; k < (int)Stage::size*Stage::size * 0.4; k++) 

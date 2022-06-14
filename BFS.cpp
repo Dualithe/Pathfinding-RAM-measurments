@@ -47,12 +47,12 @@ int BFS::findPath(int** board, int size)
 
     q.push(s);
 
-    while ( !q.empty() )
+    while (!q.empty())
     {
         Node curr = q.front();
         Point pt = curr.pt;
 
-        if (pt.x == dest.x && pt.y == dest.y)
+        if ((pt.x == dest.x) && (pt.y == dest.y))
         {
             for(int i = 0; i < size; i++) 
             {

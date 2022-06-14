@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Mon Jun 13 22:21:43 2022
+# Make data base, printed on Tue Jun 14 13:43:27 2022
 
 # Variables
 
@@ -54,7 +53,7 @@ PATH = /home/kuba/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/bi
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-3aed784f-31d4-4e39-a667-dcecae3c641b.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-1b2f9761-ece2-4d66-9d2f-8ab884679c16.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -145,8 +144,10 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=67/1024=7%, Rehash=0, Collisions=4/95=4%
+# Load=68/1024=7%, Rehash=0, Collisions=4/96=4%
 
 # Pattern-specific Variable Values
 
@@ -154,9 +155,9 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 46, inode 75998243711913276): 16 files, no impossibilities.
+# . (device 46, inode 75998243711913276): 17 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+# 17 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -219,12 +220,12 @@ Makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 178 B / avg = 8 B
-# current buf: size = 8162 B / used = 178 B / count = 21 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 22 / storage = 185 B / avg = 8 B
+# current buf: size = 8162 B / used = 185 B / count = 22 / avg = 8 B
 
-# strcache performance: lookups = 28 / hit rate = 25%
+# strcache performance: lookups = 29 / hit rate = 24%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=1/28=4%
-# Finished Make data base on Mon Jun 13 22:21:43 2022
+# Load=22/8192=0%, Rehash=0, Collisions=1/29=3%
+# Finished Make data base on Tue Jun 14 13:43:27 2022
 
  
